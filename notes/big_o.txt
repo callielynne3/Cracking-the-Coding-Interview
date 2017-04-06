@@ -1,5 +1,6 @@
 ~ BIG O ~
-• Big O just describes the rate of increase of an algorithm.
+
+• Big O is a measure of the efficiency of an algorithm.
 
 • Best Case, Worst Case, Expected Case
   • Best Case - O(N)
