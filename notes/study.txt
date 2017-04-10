@@ -1,0 +1,4 @@
+JS inheritance
+JS classes, protoype, constructor functions
+Create a linked list class/constructor
+Interview Bit
