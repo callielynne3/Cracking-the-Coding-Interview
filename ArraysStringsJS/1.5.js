@@ -7,3 +7,7 @@
 // pales. pale -> true
 // pale. bale -> true
 // pale. bake -> false
+
+function oneAway(a,b){
+  
+}
