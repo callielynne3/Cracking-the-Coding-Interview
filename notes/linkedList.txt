@@ -53,3 +53,87 @@ CCI Definition:
   *  What are the time and auxilliary space complexities of the various methods?   *
   *                                                                                *
   **********************************************************************************/
+
+
+• Node Class:
+  • The Node class contains two properties, value, to store the node's data, and nexNode to store a link to the next node in the linked list:
+
+  function Node(data) {
+    this.data = data;
+    this.nextNode = null;
+  }
+
+• Linked List Class:
+  • Here we add the functionality for a linked list. We have to include functions that will be able to insert, remove or delete nodes, as well as finding data values in the list: 
+
+  function LinkedList() {
+    this.head = new Node("head"); //points null to the first element inserted
+    this.find = find;
+    this.insert = insert;
+    this.remove = remove;
+    this.display = display;
+  }
+
+• Manipulating a Linked List:
+  • Node Insertion:
+    First we need a helper function that searches through the linked list looking for specified data, when this data is found, the function returns the node storing the data. This function is also a good example of moving through a linked list.
+    The function is built as follows.
+    Create a new node and assign it as the head node.
+    Loop through the linked list, from one node to the next when the current node's property is not equal to the data we are looking for.
+    When this data is found return the node storing the data.
+    If the data isn't found return null.
+    The insert function:
+
+    function find(item) {
+      var currentNode = this.head;
+      while (current.element != item) {
+        currentNode = currentNode.next;
+      }
+      return currentNode;
+    }
+  • Singly Linked List
+
+      function Node(element) {
+        this.element = element;
+        this.next = null;
+      }
+
+      function LList() {
+        this.head = new Node("head");
+        this.find = find;
+        this.insert = insert;
+        this.display = display;
+      }
+
+      function find(item) {
+      var currNode = this.head;
+      while (currNode.element != item) {
+            currNode = currNode.next;
+         }
+      return currNode;
+      }
+
+      function insert(newElement, item) {
+        var newNode = new Node(newElement);
+        var current = this.find(item);
+        newNode.next = current.next;
+        current.next = newNode;
+      }
+
+      function display() {
+      var currNode = this.head;
+      while (currNode.next !== null) {
+            console.log(currNode.next.element);
+            currNode = currNode.next;
+         }
+      }
+
+      var cities = new LList();
+      cities.insert("Seattle", "head");
+      cities.insert("Portland", "Seattle");
+      cities.insert("Boulder", "Portland");
+      cities.display();
+
+
+
+
