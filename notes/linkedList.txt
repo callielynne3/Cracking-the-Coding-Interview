@@ -91,6 +91,7 @@ CCI Definition:
       }
       return currentNode;
     }
+    
   • Singly Linked List
 
       function Node(element) {
