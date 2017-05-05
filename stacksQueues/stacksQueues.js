@@ -37,7 +37,7 @@ var Node = function(data) {
   this.next = null;
 };
 
-Queue.prototype.enqueue = function(data) {
+Queue.prototype.push = function(data) {
   var node = new Node(data);
 
   if (!this.first){
@@ -54,7 +54,7 @@ Queue.prototype.enqueue = function(data) {
   return node;
 };
 
-Queue.prototype.dequeue = function() {
+Queue.prototype.pop = function() {
   temp = this.first;
   this.first = this.first.next;
   this.size -= 1;

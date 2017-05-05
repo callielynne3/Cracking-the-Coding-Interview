@@ -1,18 +1,20 @@
+//singly linked list
+
 // listNode
-var listNode = function(value){
+var ListNode = function(value){
   this.value = value;
   this.next = null;
 }
 
 // linkedList
-var linkedList = function(){
+var LinkedList = function(){
   this.head = null;
   this.tail = null;
   this.listLength = 0;
 }
 
 // append
-linkedList.prototype.append = function(value) {
+LinkedList.prototype.append = function(value) {
   // Initialize our linked list
   if ( this.listLength === 0) {
     this.head = new listNode(value);
@@ -26,7 +28,7 @@ linkedList.prototype.append = function(value) {
 }
 
 // insert
-linkedList.prototype.insert = function(insertValue, searchValue) {
+LinkedList.prototype.insert = function(insertValue, searchValue) {
   var work = this.head;
   while (work !== null) {
     if (work.value === searchValue) {
@@ -48,7 +50,7 @@ linkedList.prototype.insert = function(insertValue, searchValue) {
 }
 
 // delete
-linkedList.prototype.delete = function(location) {
+LinkedList.prototype.delete = function(location) {
   // 1) when linkedList consists of single element
   if (location === 0 && this.listLength === 1) {
     this.head = null;
@@ -87,7 +89,7 @@ linkedList.prototype.delete = function(location) {
 }
 
 // contains
-linkedList.prototype.contains = function(value) {
+LinkedList.prototype.contains = function(value) {
   var work = this.head;
   while (work !== null) {
     if (work.value === value) {
