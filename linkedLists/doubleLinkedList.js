@@ -17,13 +17,12 @@ var DoubleLinkedList = function(){
 // append
 DoubleLinkedList.prototype.append = function(value) {
     var node = new Node(value);
- 
     if (this.listLength === 0) {
-        this.tail.next = node;
-        node.previous = this.tail;
+        this.head = node;
         this.tail = node;
     } else {
-        this.head = node;
+        this.tail.next = node;
+        node.previous = this.tail;
         this.tail = node;
     }
     this._length++;
@@ -31,7 +30,7 @@ DoubleLinkedList.prototype.append = function(value) {
 };
 
 // contains
-.prototype.contains = function(position) {
+DoubleLinkedList.prototype.contains = function(position) {
     var currentNode = this.head,
         length = this.listLength,
         count = 1,
