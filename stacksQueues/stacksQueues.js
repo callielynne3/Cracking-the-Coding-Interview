@@ -54,7 +54,7 @@ Queue.prototype.push = function(data) {
   return node;
 };
 
-Queue.prototype.pop = function() {
+Queue.prototype.shift = function() {
   temp = this.first;
   this.first = this.first.next;
   this.size -= 1;
