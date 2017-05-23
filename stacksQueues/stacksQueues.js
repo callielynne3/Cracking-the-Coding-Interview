@@ -9,6 +9,7 @@ var Node = function(data){
   this.previous = null;
 };
 
+// push
 Stack.prototype.push = function(data) {
   var node = new Node(data);
 
@@ -18,13 +19,13 @@ Stack.prototype.push = function(data) {
   return this.top;
 };
 
+// pop
 Stack.prototype.pop = function() {
   temp = this.top;
   this.top = this.top.previous;
   this.size -= 1;
   return temp;
 };
-
 
 //Queue
 var Queue = function() {
@@ -37,6 +38,7 @@ var Node = function(data) {
   this.next = null;
 };
 
+// push 
 Queue.prototype.push = function(data) {
   var node = new Node(data);
 
@@ -54,6 +56,7 @@ Queue.prototype.push = function(data) {
   return node;
 };
 
+// shift
 Queue.prototype.shift = function() {
   temp = this.first;
   this.first = this.first.next;
