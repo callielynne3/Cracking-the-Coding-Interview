@@ -36,21 +36,18 @@ Stack.prototype.isEmpty = function() {
   return this.values.length === 0;
 };
 
-function sortUnsortedStack(unsortedStack) {
-  
-  var orderedStack = new Stack();
-  // Keep going while there are still values in our unsorted stack
-  while (unsortedStack.values.length > 0) {
-    // Store the top unsorted value in a variable
-    var nextValue = unsortedStack.pop();
-    // As long as there are values in the ordered stack that are bigger than our popped value
-    while (!orderedStack.isEmpty() && nextValue < orderedStack.peek()) {
-      unsortedStack.push(orderedStack.pop());
+function sortStack(unsortedStack) {
+  var sortedStack = [];
+  while (unsortedStack.length > 0) {
+    console.log(sortedStack);
+    var next = unsortedStack.pop();
+    if (sortedStack.length !== 0) {
+      while (next < sortedStack[sortedStack.length - 1]) {
+        unsortedStack.push(sortedStack.pop());
+      }
     }
-    orderedStack.push(nextValue);
+    sortedStack.push(next);
   }
-  return orderedStack;
+  console.log(sortedStack);
+  return sortedStack;
 }
-
-var ourSortedStack = sortUnsortedStack(exampleStack);
-console.log(ourSortedStack.values);
