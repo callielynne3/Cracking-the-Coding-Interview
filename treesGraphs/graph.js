@@ -39,7 +39,7 @@ Graph.prototype.addEdge = function(id1, id2){
       console.log("Edge already exists");
     }
   } else {
-    console.log("Either id1 or id2 or both doesn't exist in graph");
+    console.log("Either id1 or id2 doesn't exist in graph");
   }
 }
 
