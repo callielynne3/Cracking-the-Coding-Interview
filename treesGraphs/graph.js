@@ -1,14 +1,17 @@
+// vertex
 var Vertex = function(id){
   this.value = id;
   this.edges = {};
 }
 
+// graph
 var Graph = function(){
   this.vertices = {};
   this.totalVertices = 0;
   this.totalEdges = 0;
 }
 
+// add vertex
 Graph.prototype.addVertex = function(id) {
   // find out if the id does not exist
   if ( this.vertices[id] === undefined ){
@@ -18,6 +21,7 @@ Graph.prototype.addVertex = function(id) {
   }
 }
 
+// get vertex
 Graph.prototype.getVertex = function(id) {
   // find out if the id is defined
   if (this.vertices[id] !== undefined) {
@@ -27,6 +31,7 @@ Graph.prototype.getVertex = function(id) {
   }
 }
 
+// add edge 
 Graph.prototype.addEdge = function(id1, id2){
   // 1) check to see both id1 and id2 are not undefined
   if (this.vertices[id1] !== undefined && this.vertices[id2] !== undefined){
@@ -43,6 +48,7 @@ Graph.prototype.addEdge = function(id1, id2){
   }
 }
 
+// remove edge 
 Graph.prototype.removeEdge = function(id1, id2){
   // 1) check to see both id1 and id2 are not undefined
   if (this.vertices[id1] !== undefined && this.vertices[id2] !== undefined){
@@ -59,6 +65,7 @@ Graph.prototype.removeEdge = function(id1, id2){
   }
 }
 
+// remove vertex
 Graph.prototype.removeVertex = function(id) {
   // check the id exists
   if (this.vertices[id] !== undefined) {
@@ -75,6 +82,7 @@ Graph.prototype.removeVertex = function(id) {
   }
 }
 
+// find neighbors
 Graph.prototype.findNeighbors = function(id) {
   var neighbors = [];
   // check to make id exists
@@ -89,12 +97,14 @@ Graph.prototype.findNeighbors = function(id) {
   }
 }
 
+// for each vertex
 Graph.prototype.forEachVertex = function(func){
   for (vertexKey in this.vertices){
     func(this.vertices[vertexKey]);
   }
 }
 
+// for each edge
 Graph.prototype.forEachEdge = function(func) {
   for (vertexKey in this.vertices){
     var vertex = this.vertices[vertexKey];
