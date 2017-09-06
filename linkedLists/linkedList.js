@@ -1,4 +1,4 @@
-//singly linked list
+l//singly linked list
 
 // listNode
 var ListNode = function(value){
