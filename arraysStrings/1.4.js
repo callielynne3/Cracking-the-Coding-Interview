@@ -6,23 +6,24 @@
 // Input: Tact Coa
 // Output: True (permutations: "taco cat". "atco cta". etc.)
 
-// function palindromePermutation(str){
-//   var dict = {};
-//   for(var i = 0; i < str.length; i++){
-//     var char = str[i];
-//     if(dict[char]){
-//       dict[char] += 1;
-//     }else {
-//       dict[char] = 1;
-//     }
-//   }
-//   str.keys(dict).forEach(function(keys) {
-//     var count = 0;
-//     var value = dict[keys];
-//     if(value % 2 === 1){
-//       count++;
-//     }else {
-      
-//     }
-//   })
-// }
+var palindromePermutation = function(str) {
+    var hash = {};
+    for(var i = 0; i < str.length; i++){
+      var ele = str[i];
+      if(!hash[ele]){
+        hash[ele] = 1;
+      } else {
+        hash[ele]++;
+      } 
+    }
+    var count = 0;
+    for(var key in hash){
+      if(hash[key] % 2 !== 0){
+        count++;
+      }
+      if(count > 1){
+        return false
+       }
+    }
+    return true
+};
