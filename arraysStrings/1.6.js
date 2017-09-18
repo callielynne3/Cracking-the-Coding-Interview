@@ -22,16 +22,18 @@ function stringCompression(str){
   return newStr.length < str.length ? newStr : str;
 }
 
-// function stringCompression(str){
-//   count = 0;
-//   compressed = [];
-//   for(var i = 0; i < str.length; i++){
-//     var char = str[i];
-//     if(char != char + 1){
-//       compressed.push(char.concat(count))
-//     } else {
-//       count = 0;
-//       return compressed;
-//   }
-//   return compressed.length < str ? compressed : str;
-// }
+// OR
+
+function stringCompression(str){
+  count = 0;
+  compressed = [];
+  for(var i = 0; i < str.length; i++){
+    var char = str[i];
+    if(char != char + 1){
+      compressed.push(char.concat(count))
+    } else {
+      count = 0;
+      return compressed;
+  }
+  return compressed.length < str ? compressed : str;
+}
